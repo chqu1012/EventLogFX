@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: de.dc.fx.event.log.ui
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: de.dc.fx.event.log.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: libs/jfxtras-common-8.0-r5.jar,
+ libs/jfxtras-controls-8.0-r5.jar,
+ .,
+ libs/h2-1.4.196.jar
+Require-Bundle: org.apache.commons.lang3;bundle-version="3.1.0",
+ com.google.inject;bundle-version="3.0.0",
+ javax.inject;bundle-version="1.0.0",
+ org.apache.commons.lang;bundle-version="2.6.0"

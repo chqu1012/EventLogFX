@@ -1,0 +1,31 @@
+packagePath de.dc.fx.event.log.ui
+
+Entity EventLog{
+	useSpring: false 
+
+	Field(name: EventId, datatype:Long, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	]
+	Field(name: ClassName, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	]
+	Field(name: Severity, datatype:Integer, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	]
+	Field(name: Date, datatype:java.time.LocalDateTime, required: true, useByTableView: true, useByRepository: true)[ 
+		control: jfxtras.scene.control.LocalDateTimeTextField
+		binding: localDateTimeProperty
+	]
+	Field(name: Message, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	]
+	Field(name: StackTrace, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	]
+	Field(name: SessionData, datatype:String, required: true, useByTableView: true, useByRepository: true)[ 
+		control: javafx.scene.control.TextField
+	]
+	Repository{
+		jdbcUrl: "jdbc:h2:file:./data/LogRepository;DB_CLOSE_ON_EXIT=true;"
+	}
+}
