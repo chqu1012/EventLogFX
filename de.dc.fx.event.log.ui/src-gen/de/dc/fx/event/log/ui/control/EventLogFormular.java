@@ -1,5 +1,7 @@
 package de.dc.fx.event.log.ui.control;
 
+import javax.annotation.PostConstruct;
+
 import com.google.inject.Inject;
 
 import de.dc.fx.event.log.ui.model.*;
@@ -13,8 +15,8 @@ import javafx.scene.input.MouseEvent;
 
 public class EventLogFormular extends VBox{
 
-	private EventLogFX context;
-	private EventLogRepository eventLogRepository;
+	protected EventLogFX context;
+	protected EventLogRepository eventLogRepository;
 	
 	@Inject
 	public EventLogFormular(EventLogFX context, EventLogRepository eventLogRepository) {
@@ -63,7 +65,7 @@ public class EventLogFormular extends VBox{
 		submitButton.disableProperty().bind(context.getEnabledSubmitProperty().not());
 		getChildren().add(submitButton);
 	}
-	
+
 	public void onButtonSubmit(MouseEvent e) {
 		EventLog eventLog = context.getEventLog ();
 		eventLogRepository.save(eventLog);
