@@ -1,8 +1,8 @@
 package de.dc.fx.event.log.ui;
 
-import de.dc.fx.event.log.ui.control.EventLogFormular;
 import de.dc.fx.event.log.ui.control.EventLogTableView;
 import de.dc.fx.event.log.ui.control.ExtendedEventLogFormular;
+import de.dc.fx.event.log.ui.control.ExtendedEventLogTableView;
 import de.dc.fx.event.log.ui.di.EventLogPlatform;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -13,9 +13,9 @@ public class ExtendedEventLogDemo extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		EventLogTableView eventLogTableView = EventLogPlatform.getInstance(EventLogTableView.class);
+		ExtendedEventLogTableView eventLogTableView = EventLogPlatform.getInstance(ExtendedEventLogTableView.class);
 		ExtendedEventLogFormular eventLogFormular = EventLogPlatform.getInstance(ExtendedEventLogFormular.class);
-
+		
 		BorderPane root = new BorderPane();
 		root.setCenter(eventLogTableView);
 		root.setRight(eventLogFormular);
